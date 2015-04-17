@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Drawing : NSView {
-    
-}
+@interface Drawing : NSView
+
+@property CGContextRef context;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "Drawing.h"
-#import "AppKit/AppKit.h"
 
 @implementation Drawing
 
@@ -15,19 +14,20 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
+        // self.context = [[NSGraphicsContext currentContext] graphicsPort];
+        // NSLog(@"%@", self);
     }
     return self;
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
-    NSLog(@"Mouse Clicked");
+    NSLog(@"%@", (id)(self.context));
 }
 
-- (void)drawRect:(NSRect)rect
-{
-    CGContextRef myContext = [[NSGraphicsContext currentContext] graphicsPort];
-    CGContextSetRGBFillColor(myContext, .5, 0, 1, .65);
-    CGContextFillRect(myContext, CGRectMake(200, 200, 100, 100));
+- (void)drawRect:(NSRect)rect {
+    self.context = [[NSGraphicsContext currentContext] graphicsPort];
+    CGContextSetRGBFillColor(self.context, .5, 0, 1, .65);
+    CGContextFillRect(self.context, CGRectMake(200, 200, 100, 100));
     
 }
 
