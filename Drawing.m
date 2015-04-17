@@ -14,18 +14,16 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
-        // self.context = [[NSGraphicsContext currentContext] graphicsPort];
-        // NSLog(@"%@", self);
     }
     return self;
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
-    NSLog(@"%@", (id)(self.context));
+    NSLog(@"%@", (id)([self context]));
 }
 
 - (void)drawRect:(NSRect)rect {
-    self.context = [[NSGraphicsContext currentContext] graphicsPort];
+    [self setContext:[[NSGraphicsContext currentContext] graphicsPort]];
     CGContextSetRGBFillColor(self.context, .5, 0, 1, .65);
     CGContextFillRect(self.context, CGRectMake(200, 200, 100, 100));
     
