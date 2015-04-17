@@ -13,7 +13,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Drawing  *draw = [[Drawing  alloc] initWithFrame:CGRectMake(0, 0, 500, 500)];
+    Drawing* draw = [[Drawing  alloc] initWithFrame:CGRectMake(0, 0, 500, 500)];
     [self.view addSubview:draw];
 }
 
