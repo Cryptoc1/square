@@ -19,14 +19,13 @@
 }
 
 - (void)mouseDown:(NSEvent *)theEvent {
-    NSLog(@"%@", (id)([self context]));
+    NSLog(@"Mouse clicked");
 }
 
 - (void)drawRect:(NSRect)rect {
     [self setContext:[[NSGraphicsContext currentContext] graphicsPort]];
     CGContextSetRGBFillColor(self.context, .5, 0, 1, .65);
     CGContextFillRect(self.context, CGRectMake(200, 200, 100, 100));
-    
 }
 
 - (BOOL)isFlipped
